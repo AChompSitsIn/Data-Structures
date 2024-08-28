@@ -8,8 +8,7 @@ public class Node {
 
     public Node(int item) {
         data = item;
-        left = null;
-        right = null;
+        left = right = null;
     }
     
 }
