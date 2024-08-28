@@ -58,7 +58,9 @@ public class DynamicSet {
      * @param x the elment to delete
      */
     public void delete(int x) {
+
         int index = search(x);
+
         if (index != -1) {
             for (int i = index; i < size - 1; i++) {
                 array[i] = array[i + 1];
@@ -72,7 +74,9 @@ public class DynamicSet {
      * @return the index of the minmum element
      */
     public int minimum() {
+
         int minIndex = 0;
+
         for (int i = 1; i < size; i++) {
             if (array[i] < array[minIndex]) {
                 minIndex = i;
@@ -86,7 +90,9 @@ public class DynamicSet {
      * @return the index of the maximum elment
      */
     public int maximum() {
+
         int maxIndex = 0;
+
         for (int i = 1; i < size; i++) {
             if (array[i] > array[maxIndex]) {
                 maxIndex = i;
@@ -101,7 +107,9 @@ public class DynamicSet {
      * @return the index of the sucessor or -1 if none exsts
      */
     public int successor(int x) {
+
         int successorIndex = -1;
+
         for (int i = 0; i < size; i++) {
             if (array[i] > x && (successorIndex == -1 || array[i] < array[successorIndex])) {
                 successorIndex = i;
@@ -116,7 +124,9 @@ public class DynamicSet {
      * @return the index of the predecessor or -1 if none exsts
      */
     public int predecessor(int x) {
+
         int predecessorIndex = -1;
+        
         for (int i = 0; i < size; i++) {
             if (array[i] < x && (predecessorIndex == -1 || array[i] > array[predecessorIndex])) {
                 predecessorIndex = i;
