@@ -6,6 +6,7 @@ package dynamicset;
 import java.util.Arrays;
 
 public class DynamicSet {
+    
     private int[] array;
     private int size;
 

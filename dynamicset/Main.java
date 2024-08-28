@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         
         int errorCount = 0;
+        
         DynamicSet set = new DynamicSet();
 
         // test insert
