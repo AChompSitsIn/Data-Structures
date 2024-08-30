@@ -26,5 +26,29 @@ public class BinarySearchTree {
         return root;
     }
 
-    
+    public boolean search(int data) {
+        return searchR(root, data);
+    }
+
+    public boolean searchR(Node root, int data) {
+
+        if (root == null) {
+            return false;
+        }
+        if (root.data == data) {
+            return true;
+        }
+
+        if (data < root.data) {
+            return searchR(root.left, data);
+        } 
+
+        if (data > root.data) {
+            return searchR(root.right, data);
+        }
+
+        return false;
+    }
+
+
 }
