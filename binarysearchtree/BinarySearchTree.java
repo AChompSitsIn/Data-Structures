@@ -8,21 +8,25 @@ public class BinarySearchTree {
     }
 
     public void insert(int data) {
-        root = insertR(root, data);
+        if (!search(data)) {
+            root = insertR(root, data);
+        } else {
+            //System.out.println("attempted to insert duplicate, insertion stopped");
+        }
     }
 
     public Node insertR(Node root, int data) {
-
-        if(root == null) {
+        if (root == null) {
             root = new Node(data);
+            return root;
         }
-
-        // need to recur down tree
+    
         if (data < root.data) {
             root.left = insertR(root.left, data);
         } else if (data > root.data) {
             root.right = insertR(root.right, data);
         }
+    
         return root;
     }
 
