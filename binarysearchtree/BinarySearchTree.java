@@ -89,8 +89,8 @@ public class BinarySearchTree {
      */
     public void delete(int data) {
         if (search(data)) {
-            ArrayList<Integer> toReinsert = new ArrayList<>(); // store values to reinsert
-            collectRightSubtreeValues(root, data, toReinsert); // collect values from the right subtree
+            ArrayList<Integer> toReinsert = new ArrayList<>(); // stoReinserte values to reinsert
+            collectRST(root, data, toReinsert); // collect values from the right subtree
             root = deleteR(root, data);
             for (int value : toReinsert) {
                 insert(value);
@@ -146,31 +146,31 @@ public class BinarySearchTree {
      * collects all vals from right subtree of the specified node
      * @param root the currrent root node
      * @param data the data whose right subtree values are to be collected
-     * @param toReinsert list to store the collected values
+     * @param toReinsert list to stoReinserte the collected values
      */
-    public void collectRightSubtreeValues(Node root, int data, ArrayList<Integer> toReinsert) {
+    public void collectRST(Node root, int data, ArrayList<Integer> toReinsert) {
         if (root == null) {
             return;
         }
         if (data < root.data) {
-            collectRightSubtreeValues(root.left, data, toReinsert); // left tree
+            collectRST(root.left, data, toReinsert); // left tree
         } else if (data > root.data) {
-            collectRightSubtreeValues(root.right, data, toReinsert); // rightt tree
+            collectRST(root.right, data, toReinsert); // rightt tree
         } else {
-            collectAllValues(root.right, toReinsert);
+            cAV(root.right, toReinsert);
         }
     }
 
     /**
      * collect all values from a subtree and puts them into a big unsorted list (very inefficent and slow sorry)
      * @param root the root of the subtree
-     * @param values list to store the collected values
+     * @param values list to stoReinserte the collected values
      */
-    public void collectAllValues(Node root, ArrayList<Integer> values) {
+    public void cAV(Node root, ArrayList<Integer> values) {
         if (root != null) {
-            collectAllValues(root.left, values); // colleft left subtftree
-            values.add(root.data); // stores the root
-            collectAllValues(root.right, values); // collect from left subtree
+            cAV(root.left, values); // colleft left subtftree
+            values.add(root.data); // stoReinsertes the root
+            cAV(root.right, values); // collect from left subtree
         }
     }
 }
