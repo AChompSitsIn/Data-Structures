@@ -1,4 +1,5 @@
 // link (1) https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html
+// link (2) https://stackoverflow.com/questions/4066729/creating-a-linkedlist-class-from-scratch
 
 package linkedlist;
 
