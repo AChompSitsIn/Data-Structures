@@ -1,5 +1,7 @@
 package binarysearchtree;
 
+// credit to https://www.geeksforgeeks.org/binary-search-tree-data-structure/ for teaching me about binary search trees and deletion methods
+
 import java.util.ArrayList;
 
 public class BinarySearchTree {
